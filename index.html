@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENIE Method</title>
+</head>
+<body>
+    <form id="quizForm" style="text-align:center;">
+        <label for="question1">1. What is the focus of your GENIE Method deep meditation?</label><br>
+        <input type="text" id="question1" name="question1" style="width: 300%; padding: 10px;" required><br><br>
+
+        <label for="question2">2. What is the health goal of your GENIE?</label><br>
+        <input type="text" id="question2" name="question2" style="width: 300%; padding: 10px;" required><br><br>
+
+        <label for="question3">3. How often would you like to listen to your GENIE Meditation frequencies?</label><br>
+        <div style="text-align:left; display:inline-block;">
+            <input type="radio" id="everyday" name="question3" value="Every day" required>
+            <label for="everyday">Every day</label><br>
+
+            <input type="radio" id="onceaweek" name="question3" value="Once a week">
+            <label for="onceaweek">Once a week</label><br>
+
+            <input type="radio" id="onceeverytwoweeks" name="question3" value="Once every two weeks">
+            <label for="onceeverytwoweeks">Once every two weeks</label><br>
+        </div><br><br><br>
+
+        <button type="button" onclick="validateAnswers()" style="padding: 10px 20px; font-size: 16px; background-color: #d3d3d3; border: none; color: black;">ACTIVATE GENIE</button>
+    </form>
+
+    <div id="downloadSection" style="display:none; text-align:center;">
+        <p>Thank you for answering! You can now download the audio file.</p>
+        <a href="https://cdn.shopify.com/s/files/1/0295/2075/6874/files/GENIE_Method_Activation_Audio.mp3?v=1724080085" download style="padding: 10px 20px; background-color: #d3d3d3; color: black; text-decoration: none; font-size: 16px;">Download Audio</a>
+    </div>
+
+    <script>
+        function validateAnswers() {
+            const q1 = document.getElementById("question1").value;
+            const q2 = document.getElementById("question2").value;
+            const q3 = document.querySelector('input[name="question3"]:checked');
+
+            if (q1 && q2 && q3) {
+                document.getElementById("quizForm").style.display = "none";
+                document.getElementById("downloadSection").style.display = "block";
+            } else {
+                alert("Please answer all questions.");
+            }
+        }
+    </script>
+</body>
+</html>
